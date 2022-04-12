@@ -56,15 +56,35 @@ function greetStudent2(firstName="Student", lastName="" ) {
             return num1 / num2
         case "%":
             return num1 % num2
-
         case "**":
-            return num1 ** num2
-        
+            return num1 ** num2    
         default:
             return "Operation unknown";
 
     }
-        
-  
   }
   console.log ("Let's do the math: ", doTheMath(2, "+", 3));
+
+  // Example when arrow functions are useful for short syntax
+// I want to calculate the IVA (VAT) on a price and return the total
+
+//// Main "calling" function, is the one that uses the arrow funciton inside
+function calculateTotal(price, VATCalculation){
+    return price + VATCalculation (price)
+}
+
+
+/**
+ * function VATCalculation(){
+ * return price * 0.20
+ * }
+ * 
+ * calcuateTotal(1400, VATCalculation)
+ */
+
+/*
+ * calculateTotal( 2300, fucntion(price){return pirce*0.20})
+ */
+
+calculateTotal ( 500, (price) => price * 0.20);
+calculateTotal( 1000, (price) => price * 0.12);
